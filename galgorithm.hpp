@@ -297,8 +297,8 @@ public:
     assert(first <= middle);
     assert(middle <= last);
 
-    typedef typename std::iterator_traits<RandomAccessIterator>::value_type
-        value_type;
+    // typedef typename std::iterator_traits<RandomAccessIterator>::value_type
+    //     value_type;
 
     const size_t sorted_range_size = middle - first;
     if (sorted_range_size > 0) {

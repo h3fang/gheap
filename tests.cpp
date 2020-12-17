@@ -202,7 +202,7 @@ void test_pop_heap(const size_t n)
 template <class Heap, class IntContainer>
 void test_swap_max_item(const size_t n)
 {
-  typedef typename IntContainer::iterator iterator;
+  // typedef typename IntContainer::iterator iterator;
 
   cout << "    test_swap_max_item(n=" << n << ") ";
 
@@ -325,7 +325,7 @@ template <class Heap, class IntContainer>
 void test_partial_sort(const size_t n)
 {
   typedef galgorithm<Heap> algorithm;
-  typedef typename IntContainer::iterator iterator;
+  // typedef typename IntContainer::iterator iterator;
 
   cout << "    test_partial_sort(n=" << n << ") ";
 
