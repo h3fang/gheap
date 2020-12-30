@@ -1,17 +1,11 @@
 // Priority queue on top of Heap.
 //
-// Pass -DGHEAP_CPP11 to compiler for enabling C++11 optimization,
-// otherwise C++03 optimization will be enabled.
 
 #include <cassert>
 #include <functional>   // for std::less
 #include <vector>
+#include <utility>    // for std::swap(), std::move(), std::forward()
 
-#ifdef GHEAP_CPP11
-#  include <utility>    // for std::swap(), std::move(), std::forward()
-#else
-#  include <algorithm>  // for std::swap()
-#endif
 
 template <class Heap, class T, class Container = std::vector<T>,
     class LessComparer = std::less<typename Container::value_type> >
@@ -101,13 +95,11 @@ public:
     std::swap(comp, q.comp);
   }
 
-#ifdef GHEAP_CPP11
   void push(T &&v)
   {
     c.push_back(std::move(v));
     _push_heap();
   }
-#endif
 
   // Copy constructors and assignment operators are implicitly defined.
 };
